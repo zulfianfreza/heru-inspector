@@ -130,12 +130,11 @@ export default function Navbar() {
                                             smooth="easeInOutQuart"
                                             duration={1000}
                                             activeClass=" bg-secondary-lighten text-secondary"
-                                            className={`
-                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
-                                                         active == "home"
-                                                             ? "bg-secondary-lighten text-secondary "
-                                                             : "bg-white text-yankess"
-                                                     }`}
+                                            className={` cursor-pointer flex w-full items-center rounded-md px-2.5 py-2.5 hover:bg-secondary-lighten hover:text-secondary duration-300 transition ${
+                                                active == "home"
+                                                    ? "bg-secondary-lighten text-secondary "
+                                                    : "bg-white text-yankess"
+                                            }`}
                                             onSetActive={() =>
                                                 setActive("home")
                                             }
@@ -154,12 +153,11 @@ export default function Navbar() {
                                             duration={1000}
                                             activeClass=" bg-secondary-lighten"
                                             offset={-105}
-                                            className={`
-                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
-                                                         active == "service"
-                                                             ? "bg-secondary-lighten text-secondary "
-                                                             : "bg-white text-yankess"
-                                                     }`}
+                                            className={` cursor-pointer flex w-full hover:bg-secondary-lighten hover:text-secondary duration-300 transition items-center rounded-md px-2.5 py-2.5 ${
+                                                active == "service"
+                                                    ? "bg-secondary-lighten text-secondary "
+                                                    : "bg-white text-yankess"
+                                            }`}
                                             onSetActive={() =>
                                                 setActive("service")
                                             }
@@ -178,12 +176,11 @@ export default function Navbar() {
                                             duration={1000}
                                             activeClass=" bg-secondary-lighten"
                                             offset={-105}
-                                            className={`
-                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
-                                                         active == "how"
-                                                             ? "bg-secondary-lighten text-secondary "
-                                                             : "bg-white text-yankess"
-                                                     }`}
+                                            className={` cursor-pointer flex w-full items-center rounded-md px-2.5 py-2.5 hover:bg-secondary-lighten hover:text-secondary duration-300 transition  ${
+                                                active == "how"
+                                                    ? "bg-secondary-lighten text-secondary "
+                                                    : "bg-white text-yankess"
+                                            }`}
                                             onSetActive={() => setActive("how")}
                                             onSetInactive={() => setActive("")}
                                         >

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,6 +10,7 @@ import {
     FaWhatsapp,
     FaYoutube,
 } from "react-icons/fa";
+import { Link as LinkRS } from "react-scroll";
 
 export default function Footer() {
     return (
@@ -82,7 +84,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr className=" border-[#FAFAFA] my-[30px]" />
+                <hr className=" border-[#203a68] my-[30px]" />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[100px] items-center gap-y-[30px]">
                     <div className=" flex flex-col items-center gap-y-[30px]">
                         <Image
@@ -98,32 +100,48 @@ export default function Footer() {
                     <div className="mt-[30px]">
                         <div className="flex flex-col lg:flex-row justify-between gap-y-2.5">
                             <div className="flex flex-col gap-y-2.5 lg:gap-y-9">
-                                <Link
-                                    href=""
-                                    className=" text-[20px] text-[#E5E5E5] hover:text-white duration-300 transition"
+                                <LinkRS
+                                    to="home"
+                                    spy={true}
+                                    smooth="easeInOutQuart"
+                                    duration={1000}
+                                    offset={-105}
+                                    className=" cursor-pointer text-[20px] text-[#E5E5E5] hover:text-white duration-300 transition"
                                 >
                                     Home
-                                </Link>
-                                <Link
-                                    href=""
-                                    className=" text-[20px] text-[#E5E5E5]"
+                                </LinkRS>
+                                <LinkRS
+                                    to="service"
+                                    spy={true}
+                                    smooth="easeInOutQuart"
+                                    duration={1000}
+                                    offset={-105}
+                                    className=" cursor-pointer text-[20px] text-[#E5E5E5]"
                                 >
                                     Service
-                                </Link>
+                                </LinkRS>
                             </div>
                             <div className="flex flex-col gap-y-2.5 lg:gap-y-9">
-                                <Link
-                                    href=""
-                                    className=" text-[20px] text-[#E5E5E5]"
+                                <LinkRS
+                                    to="how"
+                                    spy={true}
+                                    smooth="easeInOutQuart"
+                                    duration={1000}
+                                    offset={-105}
+                                    className=" cursor-pointer text-[20px] text-[#E5E5E5]"
                                 >
                                     Work
-                                </Link>
-                                <Link
-                                    href=""
-                                    className=" text-[20px] text-[#E5E5E5]"
+                                </LinkRS>
+                                <LinkRS
+                                    to="contact"
+                                    spy={true}
+                                    smooth="easeInOutQuart"
+                                    duration={1000}
+                                    offset={-105}
+                                    className=" cursor-pointer text-[20px] text-[#E5E5E5]"
                                 >
                                     Contact
-                                </Link>
+                                </LinkRS>
                             </div>
                         </div>
                         <div className=" mt-[70px] flex gap-x-4 justify-center z-50">
