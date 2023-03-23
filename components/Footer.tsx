@@ -13,7 +13,7 @@ import {
 export default function Footer() {
     return (
         <section>
-            <div className=" mt-[30px] lg:mt-[60px] p-5 lg:p-10 bg-primary relative">
+            <div className=" mt-[30px] lg:mt-[60px] p-5 lg:px-[100px] lg:py-10 bg-primary relative">
                 <Image
                     src="/half1.png"
                     height={183}
@@ -35,8 +35,8 @@ export default function Footer() {
                     alt=""
                     className=" absolute bottom-0 lg:right-0 right-1/2 translate-x-1/2 lg:translate-x-0 z-[1]"
                 />
-                <div className=" z-50">
-                    <div className="flex gap-x-[196px] flex-col lg:flex-row gap-y-[30px]">
+                <div className=" z-30">
+                    <div className="flex gap-x-[144px] flex-col lg:flex-row gap-y-[30px]">
                         <div className=" flex-1">
                             <h1 className=" text-[24px] lg:text-[40px] text-white">
                                 <span className=" font-bold">
@@ -52,7 +52,7 @@ export default function Footer() {
                                 terbaik dalam menjalankan pekerjaan.
                             </p>
                         </div>
-                        <div className=" p-[30px] bg-[#344364] w-full lg:w-[516px] rounded-[20px] z-50">
+                        <div className=" p-[30px] bg-[#344364] w-full lg:w-[516px] rounded-[20px] z-30">
                             <div className=" flex justify-between items-center">
                                 <p className=" text-white text-[20px]">
                                     Whatsapp kami sekarang
@@ -83,7 +83,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <hr className=" border-[#FAFAFA] my-[30px]" />
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[200px] items-center gap-y-[30px]">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[100px] items-center gap-y-[30px]">
                     <div className=" flex flex-col items-center gap-y-[30px]">
                         <Image
                             src={"/logo_vertikal.png"}

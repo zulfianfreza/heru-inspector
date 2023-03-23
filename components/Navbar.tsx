@@ -2,43 +2,91 @@
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Fragment } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import React, { Fragment, useEffect, useState } from "react";
+import { Element, Link as LinkRS, Events, scrollSpy } from "react-scroll";
 
 export default function Navbar() {
+    const [active, setActive] = useState<string>("");
     return (
         <>
-            <div className=" w-full py-3 lg:py-4 text-white text-[16px] lg:text-[24px] bg-primary flex items-center">
-                <marquee>
-                    inpeksi kendaraan berkualitas & berpengalaman ! inpeksi
-                    kendaraan berkualitas & berpengalaman ! inpeksi kendaraan
-                    berkualitas & berpengalaman !
-                </marquee>
-            </div>
-            <div className=" px-5 lg:px-10 flex justify-between items-center py-[30px]">
-                <Image src="/logo.png" height={80} width={250} alt="logo" />
-                <nav className=" gap-x-9 text-lg items-center text-[24px] hidden lg:flex">
-                    <Link
-                        href=""
-                        className=" text-secondary-dark py-[15px] px-2.5 bg-secondary-lighten border-b-[2px] border-b-secondary"
+            <Element name="home">
+                <div className=" w-full py-3 lg:py-4 text-white text-[16px] lg:text-[24px] bg-primary flex items-center">
+                    <marquee>
+                        inpeksi kendaraan berkualitas & berpengalaman ! inpeksi
+                        kendaraan berkualitas & berpengalaman ! inpeksi
+                        kendaraan berkualitas & berpengalaman !
+                    </marquee>
+                </div>
+            </Element>
+            <div className=" px-5 lg:px-[100px] flex justify-between items-center py-5 sticky top-0 z-50 bg-white/90 backdrop-blur">
+                <div className="w-[172px] lg:w-[225px] h-16 lg:h-20 relative">
+                    <Image
+                        src="/logo.png"
+                        fill={true}
+                        alt="logo"
+                        className=" object-contain"
+                    />
+                </div>
+                <nav className=" gap-x-5 text-lg items-center text-[24px] hidden lg:flex">
+                    <LinkRS
+                        to="home"
+                        spy={true}
+                        smooth="easeInOutQuart"
+                        duration={1000}
+                        className={` cursor-pointer py-[15px] duration-300 transition px-2.5 border-b-[2px] hover:bg-secondary-lighten hover:border-b-secondary hover:text-secondary-dark ${
+                            active == "home"
+                                ? " bg-secondary-lighten border-b-secondary text-secondary-dark"
+                                : "bg-transparent border-b-transparent text-yankess"
+                        }`}
+                        onSetActive={() => setActive("home")}
+                        onSetInactive={() => setActive("")}
+                        activeClass="bg-secondary-lighten border-b-secondary text-secondary-dark"
                     >
                         Home
-                    </Link>
-                    <Link
-                        href=""
-                        className=" text-yankess py-[15px] px-2.5 hover:bg-secondary-lighten duration-300 transition-all border-b-[2px] border-b-white hover:border-b-secondary hover:text-secondary-dark"
+                    </LinkRS>
+                    <LinkRS
+                        to="service"
+                        spy={true}
+                        smooth="easeInOutQuart"
+                        duration={1000}
+                        activeClass=" bg-secondary-lighten border-b-secondary text-secondary-dark"
+                        offset={-120}
+                        className={` cursor-pointer py-[15px] duration-300 transition px-2.5 border-b-[2px] hover:bg-secondary-lighten hover:border-b-secondary hover:text-secondary-dark ${
+                            active == "service"
+                                ? " bg-secondary-lighten border-b-secondary text-secondary-dark"
+                                : "bg-transparent border-b-transparent text-yankess"
+                        }`}
+                        onSetActive={() => setActive("service")}
+                        onSetInactive={() => setActive("")}
                     >
                         Our Service
-                    </Link>
-                    <Link
-                        href=""
-                        className=" text-yankess py-[15px] px-2.5 hover:bg-secondary-lighten duration-300 transition-all border-b-[2px] border-b-white hover:border-b-secondary hover:text-secondary-dark"
+                    </LinkRS>
+                    <LinkRS
+                        to="how"
+                        spy={true}
+                        smooth="easeInOutQuart"
+                        duration={1000}
+                        activeClass=" bg-secondary-lighten border-b-secondary text-secondary-dark"
+                        offset={-120}
+                        className={` cursor-pointer py-[15px] duration-300 transition px-2.5 border-b-[2px] hover:bg-secondary-lighten hover:border-b-secondary hover:text-secondary-dark ${
+                            active == "how"
+                                ? " bg-secondary-lighten border-b-secondary text-secondary-dark"
+                                : "bg-transparent border-b-transparent text-yankess"
+                        }`}
+                        onSetActive={() => setActive("how")}
+                        onSetInactive={() => setActive("")}
                     >
                         How Heru Work
-                    </Link>
-                    <Link
-                        href=""
-                        className=" bg-secondary-light text-yankess px-5 py-2.5 flex rounded-full items-center gap-x-4"
+                    </LinkRS>
+                    <LinkRS
+                        to="contact"
+                        spy={true}
+                        smooth="easeInOutQuart"
+                        duration={1000}
+                        offset={-120}
+                        className=" cursor-pointer bg-secondary-light text-yankess px-5 py-2.5 flex rounded-full items-center gap-x-4"
+                        onSetActive={() => setActive("contact")}
+                        onSetInactive={() => setActive("")}
                     >
                         <Image
                             src="/contact.png"
@@ -47,7 +95,7 @@ export default function Navbar() {
                             alt="wa"
                         />
                         Contact Heru Inspector
-                    </Link>
+                    </LinkRS>
                 </nav>
                 <Menu
                     as="div"
@@ -73,41 +121,97 @@ export default function Navbar() {
                         leaveTo="transform opacity-0 scale-95"
                     >
                         <Menu.Items className="absolute right-0 mt-2 w-80 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            <div className="p-2 space-y-2 ">
+                            <div className="p-2 space-y-2 text-[16px] lg:text-[20px]">
                                 <Menu.Item>
-                                    <button
-                                        className={`
-                                                    bg-secondary-lighten text-secondary border-b-[3px] border-b-secondary flex w-full items-center rounded-md px-2.5 py-2.5 text-[20px]`}
-                                    >
-                                        Home
-                                    </button>
+                                    <>
+                                        <LinkRS
+                                            to="home"
+                                            spy={true}
+                                            smooth="easeInOutQuart"
+                                            duration={1000}
+                                            activeClass=" bg-secondary-lighten text-secondary"
+                                            className={`
+                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
+                                                         active == "home"
+                                                             ? "bg-secondary-lighten text-secondary "
+                                                             : "bg-white text-yankess"
+                                                     }`}
+                                            onSetActive={() =>
+                                                setActive("home")
+                                            }
+                                            onSetInactive={() => setActive("")}
+                                        >
+                                            Home
+                                        </LinkRS>
+                                    </>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <button
-                                        className={`
-                                                    bg-white text-yankess border-b-[3px] transition-all duration-300 hover:text-secondary border-b-white hover:bg-secondary-lighten hover:border-b-secondary flex w-full items-center rounded-md px-2.5 py-2.5 text-[20px]`}
-                                    >
-                                        Our Service
-                                    </button>
+                                    <>
+                                        <LinkRS
+                                            to="service"
+                                            spy={true}
+                                            smooth="easeInOutQuart"
+                                            duration={1000}
+                                            activeClass=" bg-secondary-lighten"
+                                            offset={-105}
+                                            className={`
+                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
+                                                         active == "service"
+                                                             ? "bg-secondary-lighten text-secondary "
+                                                             : "bg-white text-yankess"
+                                                     }`}
+                                            onSetActive={() =>
+                                                setActive("service")
+                                            }
+                                            onSetInactive={() => setActive("")}
+                                        >
+                                            Our Service
+                                        </LinkRS>
+                                    </>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <button
-                                        className={`
-                                                    bg-white text-yankess border-b-[3px] transition-all duration-300 hover:text-secondary border-b-white hover:bg-secondary-lighten hover:border-b-secondary flex w-full items-center rounded-md px-2.5 py-2.5 text-[20px]`}
-                                    >
-                                        How Heru Work
-                                    </button>
+                                    <>
+                                        <LinkRS
+                                            to="how"
+                                            spy={true}
+                                            smooth="easeInOutQuart"
+                                            duration={1000}
+                                            activeClass=" bg-secondary-lighten"
+                                            offset={-105}
+                                            className={`
+                                                     flex w-full items-center rounded-md px-2.5 py-2.5 ${
+                                                         active == "how"
+                                                             ? "bg-secondary-lighten text-secondary "
+                                                             : "bg-white text-yankess"
+                                                     }`}
+                                            onSetActive={() => setActive("how")}
+                                            onSetInactive={() => setActive("")}
+                                        >
+                                            How Heru Work
+                                        </LinkRS>
+                                    </>
                                 </Menu.Item>
+                                <hr />
                                 <Menu.Item>
-                                    <button className=" bg-secondary-light w-full text-yankess px-5 py-2.5 flex rounded-full items-center gap-x-4 text-[20px]">
-                                        <Image
-                                            src="/contact.png"
-                                            height={40}
-                                            width={40}
-                                            alt="wa"
-                                        />
-                                        Contact Heru Inspector
-                                    </button>
+                                    <>
+                                        <LinkRS
+                                            to="contact"
+                                            spy={true}
+                                            smooth="easeInOutQuart"
+                                            duration={1000}
+                                            activeClass=" bg-secondary-lighten"
+                                            offset={-105}
+                                            className=" bg-secondary-light w-full text-yankess px-5 py-2.5 flex rounded-full items-center gap-x-4"
+                                        >
+                                            <Image
+                                                src="/contact.png"
+                                                height={40}
+                                                width={40}
+                                                alt="wa"
+                                            />
+                                            Contact Heru Inspector
+                                        </LinkRS>
+                                    </>
                                 </Menu.Item>
                             </div>
                         </Menu.Items>

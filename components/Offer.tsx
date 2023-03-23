@@ -51,7 +51,7 @@ export default function Offer() {
                     keyBoardControl={true}
                     customTransition="transform 300ms ease-in-out"
                     transitionDuration={500}
-                    containerClass=" mx-2.5  lg:mx-5 mt-[30px]"
+                    containerClass=" mx-2.5  lg:mx-[80px] mt-[30px]"
                     removeArrowOnDeviceType={["desktop"]}
                     itemClass="p-2.5 lg:p-5"
                     sliderClass=""
@@ -93,7 +93,7 @@ export default function Offer() {
                             <p className=" font-bold text-[24px] mt-[30px] lg:text-[36px] text-danger line-through">
                                 Rp 388.999
                             </p>
-                            <p className=" font-bold text-yankess text-[36px] lg:text-[64px]">
+                            <p className=" font-bold text-yankess text-[36px] lg:text-[48px]">
                                 Rp 200.000
                             </p>
                             <button className=" p-5 bg-secondary-light text-[20px] lg:text-[24px] font-bold hover:bg-secondary transition duration-300">
@@ -128,7 +128,7 @@ export default function Offer() {
                             <p className=" font-bold text-[24px] mt-[30px] lg:text-[36px] text-danger line-through">
                                 Rp 388.999
                             </p>
-                            <p className=" font-bold text-yankess text-[36px] lg:text-[64px]">
+                            <p className=" font-bold text-yankess text-[36px] lg:text-[48px]">
                                 Rp 300.000
                             </p>
                             <button className=" p-5 bg-secondary-light text-[20px] lg:text-[24px] font-bold hover:bg-secondary transition duration-300">
@@ -163,7 +163,7 @@ export default function Offer() {
                             <p className=" font-bold text-[24px] mt-[30px] lg:text-[36px] text-danger line-through">
                                 Rp 388.999
                             </p>
-                            <p className=" font-bold text-yankess text-[36px] lg:text-[64px]">
+                            <p className=" font-bold text-yankess text-[36px] lg:text-[48px]">
                                 Rp 400.000
                             </p>
                             <button className=" p-5 bg-secondary-light text-[20px] lg:text-[24px] font-bold hover:bg-secondary transition duration-300">

@@ -4,6 +4,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Element } from "react-scroll";
 
 export default function Service() {
     const responsive = {
@@ -24,10 +25,10 @@ export default function Service() {
         },
     };
     return (
-        <section id="our-service">
+        <Element name="service">
             <div className="lg:mt-[60px] mt-[30px] w-full overflow-hidden">
-                <div className=" mx-5 lg:mx-10">
-                    <div className=" w-full lg:w-[668px] p-5 bg-secondary-light border-l-[3px] space-y-5 border-l-secondary">
+                <div className=" mx-5 lg:mx-[100px]">
+                    <div className=" w-full p-5 bg-secondary-light border-l-[3px] space-y-5 border-l-secondary">
                         <h1 className=" text-[36px] lg:text-[64px] font-bold leading-none text-yankess">
                             Our Service
                         </h1>
@@ -47,7 +48,7 @@ export default function Service() {
                         keyBoardControl={true}
                         customTransition="transform 300ms ease-in-out"
                         transitionDuration={500}
-                        containerClass=" mx-2.5  lg:mx-5 mt-[30px]"
+                        containerClass=" mx-2.5  lg:mx-[80px] mt-[30px]"
                         removeArrowOnDeviceType={["desktop"]}
                         itemClass="p-2.5 lg:p-5"
                         sliderClass=""
@@ -313,6 +314,6 @@ export default function Service() {
                     </Carousel>
                 </div>
             </div>
-        </section>
+        </Element>
     );
 }

@@ -1,26 +1,22 @@
 "use client";
-import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
+import {
+    Accordion,
+    AccordionItem as Item,
+    AccordionItemProps,
+} from "@szhsin/react-accordion";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { Element } from "react-scroll";
 
-const AccordionItem = ({
-    header,
-    children,
-    initialEntered = false,
-    ...rest
-}: {
-    header: string;
-    children: React.ReactNode;
-    initialEntered?: boolean;
-}) => (
+const AccordionItem = ({ header, children, ...rest }: AccordionItemProps) => (
     <Item
         {...rest}
         header={({ state: { isEnter } }) => (
             <>
                 {header}
                 <FaChevronDown
-                    className={`ml-auto transition-transform duration-200 ease-in-out lg:w-6 lg:h-10 w-3 h-5 ${
+                    className={`ml-auto transition-transform duration-300 ease-in-out lg:w-6 lg:h-10 w-3 h-5 ${
                         isEnter && "rotate-180"
                     }`}
                 />
@@ -29,13 +25,13 @@ const AccordionItem = ({
         className="w-full rounded-[10px] overflow-hidden"
         buttonProps={{
             className: ({ isEnter }) =>
-                `flex w-full p-4 text-left text-[16px] lg:text-[40px] font-bold hover:bg-primary-light transition duration-300 text-primary ${
+                `flex w-full p-4 text-left text-[16px] lg:text-[32px] items-center font-bold hover:bg-primary-light transition duration-300 ease-in-out text-primary ${
                     isEnter ? "bg-primary-light" : "bg-white"
                 }`,
         }}
         contentProps={{
             className:
-                "bg-white transition-height duration-200 ease-in-out text-[12px] lg:text-[28px] text-primary",
+                "bg-white transition-height duration-200 ease-in-out text-[12px] lg:text-[24px] text-primary",
         }}
         panelProps={{ className: "p-4" }}
     >
@@ -44,10 +40,9 @@ const AccordionItem = ({
 );
 
 export default function How() {
-    const [open, setOpen] = useState(false);
     return (
-        <section id="how">
-            <div className="w-full p-5 lg:p-[30px] mt-[30px] gap-y-[30px] bg-[#042457] flex lg:flex-row flex-col gap-x-[30px] items-stretch">
+        <Element name="how">
+            <div className="w-full p-5 lg:py-10 lg:px-[100px] mt-[30px] gap-y-[30px] bg-[#042457] flex lg:flex-row flex-col gap-x-[30px] items-stretch">
                 <div className=" w-full lg:w-[532px] rounded-[20px] h-[600px] relative">
                     <Image
                         src="/how.png"
@@ -105,6 +100,6 @@ export default function How() {
                     </AccordionItem>
                 </Accordion>
             </div>
-        </section>
+        </Element>
     );
 }

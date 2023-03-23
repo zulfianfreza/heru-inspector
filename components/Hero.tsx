@@ -4,10 +4,10 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <section id="hero">
-            <div className=" mx-5 lg:mx-10 flex flex-col lg:flex-row gap-x-[70px] my-[30px] gap-y-[30px] lg:gap-y-0 ">
+        <section>
+            <div className=" mx-5 lg:mx-[100px] flex flex-col lg:flex-row gap-x-[70px] my-[30px] gap-y-[30px] lg:gap-y-0 ">
                 <div className="flex-1 space-y-5">
-                    <h1 className=" text-primary font-bold text-[40px] lg:text-[72px] xl:text-[92px] leading-relaxed">
+                    <h1 className=" text-primary font-bold text-[40px] lg:text-[56px] xl:text-[92px] leading-relaxed">
                         Jasa Inspeksi Mobil Bekas !
                     </h1>
                     <p className=" text-[#6D6D6D] text-12px lg:text-[24px] font-light">
@@ -40,9 +40,9 @@ export default function Hero() {
                         Hubungin WhatsApp
                     </Link>
                 </div>
-                <div className="w-auto lg:w-[556px] xl:w-[655px] flex-1 lg:flex-none">
+                <div className="w-auto lg:w-[506px] xl:w-[605px] flex-1 lg:flex-none">
                     <div className="bg-primary w-full">
-                        <div className=" w-full relative h-[256px] lg:h-[398px] ">
+                        <div className=" w-full relative h-[206px] lg:h-[398px] ">
                             <Image
                                 src="/hero.png"
                                 fill={true}
